@@ -7,7 +7,7 @@ const Index = () => {
     return (
         <View>
             <Text>Index</Text>
-            <Text>{value}</Text>
+            <Text style={{ color: 'red' }}>{value}</Text>
         </View>
     )
 }
