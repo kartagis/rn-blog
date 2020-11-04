@@ -1,13 +1,19 @@
 import React, { useContext } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, FlatList } from 'react-native'
 import Context from '../context/Context'
 
 const Index = () => {
-    const value = useContext(Context)
+    const blogPosts = useContext(Context)
     return (
         <View>
             <Text>Index</Text>
-            <Text style={{ color: 'red' }}>{value}</Text>
+            <FlatList 
+                data={blogPosts}
+                keyExtractor={(blogPost) => blogPost.title}
+                renderItem={({ item }) => {
+                    return <Text>{item.title}</Text>
+                }}
+            />
         </View>
     )
 }
